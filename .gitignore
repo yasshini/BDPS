@@ -1,0 +1,13 @@
+# Secrets and local environment
+.env
+.env.*
+
+# Installed dependencies and generated builds
+**/node_modules/
+**/dist/
+/backend/public/
+
+# Local logs and editor files
+*.log
+.vscode/
+.idea/

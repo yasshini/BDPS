@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="480" viewBox="0 0 720 480">
+  <rect width="720" height="480" fill="#f5f3ec"/>
+  <rect x="36" y="36" width="648" height="408" rx="24" fill="#17191c"/>
+  <path d="M84 324h112l47-168 48 168h102l67-168 60 168h116" fill="none" stroke="#eb8922" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"/>
+  <text x="360" y="390" fill="#fff" font-family="Arial, sans-serif" font-size="28" font-weight="700" text-anchor="middle">BDPS DEMO IMAGE</text>
+</svg>

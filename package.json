@@ -1,0 +1,21 @@
+{
+  "name": "bdps-ebill",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "node": ">=22.12"
+  },
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
+  "overrides": {
+    "uuid": "^11.1.1"
+  },
+  "scripts": {
+    "build": "npm --workspace frontend run build",
+    "start": "npm --workspace backend start",
+    "db:migrate": "npm --workspace backend run db:migrate -- --env production",
+    "test": "npm --workspace backend test"
+  }
+}
