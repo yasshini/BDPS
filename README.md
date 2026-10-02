@@ -36,7 +36,30 @@ Start command: npm start
 
 Use Node.js 22 or newer (22.12+ recommended).
 
-### 3. Add the app's environment settings
+### 3. Deploy the frontend with the backend
+
+The frontend is the website visitors see. It is in `frontend/`, but it is not
+deployed as a separate Hostinger website. The Node.js app builds and serves it
+alongside the API:
+
+1. Connect the GitHub repository's top-level folder as the Node.js app root.
+   Do not choose only `frontend/` or only `backend/`.
+2. Set the build command to `npm run build`. Hostinger installs the root
+   project's dependencies, then this command builds the React website into
+   `backend/public/`.
+3. Set the start command to `npm start`. This starts the backend, which serves
+   both the frontend pages and `/api` requests on the same domain.
+4. Assign `bdps-ebill.in` to this Node.js app in hPanel and enable HTTPS.
+5. Do not upload the frontend separately with FTP or create a separate static
+   website for it. Do not commit or upload the generated `backend/public/`
+   folder; the build creates it during deployment.
+
+After deployment, opening `https://bdps-ebill.in` should show the frontend,
+while `https://bdps-ebill.in/api/health` should show the API health response.
+The frontend uses the same domain for API calls; no localhost URL needs to be
+entered in the frontend settings.
+
+### 4. Add the app's environment settings
 
 In the Node.js app's **Environment Variables** section, add:
 
@@ -58,7 +81,7 @@ Let Hostinger set `PORT` if it provides one.
 Never add real passwords to GitHub or frontend files. Do not upload a `.env`
 file.
 
-### 4. Create the database tables
+### 5. Create the database tables
 
 After setting the environment variables, open the Node app's terminal and
 change to the repository/application root. Run:
@@ -72,7 +95,7 @@ are empty, so there is no customer or invoice data to import. Do not run
 migrations against a different or existing database without checking it
 first.
 
-### 5. Start and check the website
+### 6. Start and check the website
 
 Start or restart the Node.js app in hPanel, then open:
 
